@@ -26,7 +26,7 @@ def transformation(extracted_data):
     return orders_df
 
 def load(sales_data):
-    engine = sqla.create_engine('mssql://JuicyLucy\MSSQLSERVER01/master?driver=ODBC+DRIVER+17+FOR+SQL+SERVER')
+    engine = sqla.create_engine('mssql://ServerName/DatabaseName?driver=ODBC-Driver')
     connection = engine.connect()
     sales_data.to_sql('sales', con = connection , index=False, if_exists = 'append')
     
